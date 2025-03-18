@@ -12,8 +12,11 @@ async function main() {
     await gymMembership.waitForDeployment();
 
     const contractAddress = await gymMembership.getAddress();
+    const contractAbi = await JSON.stringify(GymMembership.interface.fragments);
+
 
     console.log("GymMembership contract deployed to:", contractAddress);
+    console.log("GymMembership contract abi:", contractAbi);
     console.log("GymMembership contract details:", gymMembership);
 }
 
